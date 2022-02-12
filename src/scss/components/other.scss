@@ -1,0 +1,42 @@
+@use "../utils" as *;
+@use "../globals" as *;
+
+// Author Component
+.author {
+    position: relative;
+    &__img {
+        border-radius: 50%;
+        border: 2px solid var(--color-white);
+        display: inline-block;  
+    }
+
+    &__name {
+        font-size: rem(9);
+        display: inline-block;
+        // padding-top: rem(5);
+        // padding-left: rem(15);
+        position: absolute;
+        left: rem(80);
+        margin-top: rem(15);
+    }
+}
+// Heading Component
+.heading {
+    font-size: rem(20);
+    margin: rem(10) auto rem(20) auto;
+}
+
+// Detail Component
+.detail {
+    font-size: rem(12.5);
+    color: var(--color-dark-grey);
+    &--light-grey{
+        color: var(--color-light-grey);
+    }
+
+    &--grey{
+        color: var(--color-grey);
+    }
+
+
+}

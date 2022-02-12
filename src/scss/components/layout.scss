@@ -1,0 +1,112 @@
+@use "../utils" as *;
+@use "../globals" as *;
+
+// Testimonial Section
+.testimonial {
+    margin: 0 auto;
+    max-width: 75rem; //Chưa nghĩ tới
+    width: 85%; //Chưa nghĩ tới
+
+    &__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr; 
+    // grid-template-rows: auto auto;
+    // grid-template-rows: rem(320) rem(320); 
+
+    gap: rem(30);
+    }
+
+    &__item {
+        padding: rem(20);
+        border-radius: 5px;
+        &--violet {
+            @include area($row-start: 1, $row-end:2, $col-start:1, $col-end:3, 
+            $bg: var(--color-violet), 
+            $color: var(--color-white));
+        }
+
+        &--grey{
+            @include area($row-start: 1, $row-end:2, $col-start:3, $col-end:4, 
+            $bg: var(--color-grey), 
+            $color: var(--color-white));
+        }
+
+        &--white {
+            @include area($row-start: 2, $row-end:3, $col-start:1, $col-end:2, 
+            $bg: var(--color-white), 
+            $color: var(--color-dark-grey));
+        }
+
+        &--dark-grey {
+            @include area($row-start: 2, $row-end:3, $col-start:2, $col-end:4, 
+            $bg: var(--color-dark-grey), 
+            $color: var(--color-white));
+        }
+
+        &--white-long {
+            @include area($row-start: 1, $row-end:3, $col-start:4, $col-end:5, 
+            $bg: var(--color-white), 
+            $color: var(--color-grey));
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+.testimonial {
+
+  
+
+    &__container {
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: 1fr 1fr;
+
+        }
+    &__item {
+        &--violet {
+            @include area($row-start: 1, $row-end:2, $col-start:1, $col-end:3, 
+            $bg: var(--color-violet), 
+            $color: var(--color-white));
+        }
+
+        &--grey{
+            @include area($row-start: 2, $row-end:3, $col-start:1, $col-end:2, 
+            $bg: var(--color-grey), 
+            $color: var(--color-white));
+        }
+
+        &--white {
+            @include area($row-start: 2, $row-end:3, $col-start:2, $col-end:3, 
+            $bg: var(--color-white), 
+            $color: var(--color-dark-grey));
+        }
+
+        &--dark-grey {
+            @include area($row-start: 3, $row-end:5, $col-start:1, $col-end:2, 
+            $bg: var(--color-dark-grey), 
+            $color: var(--color-white));
+        }
+
+        &--white-long {
+            @include area($row-start: 3, $row-end:5, $col-start:2, $col-end:3, 
+            $bg: var(--color-white), 
+            $color: var(--color-grey));
+        }
+    }
+}
+}
+
+@media screen and (max-width: 576px) {
+.testimonial {
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+    
+}
+// Footer Section
+.footer {
+    margin: rem(30);
+    text-align: center;
+}
